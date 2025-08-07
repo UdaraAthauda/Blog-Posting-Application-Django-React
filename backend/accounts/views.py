@@ -29,16 +29,6 @@ class UpdateUserView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     def delete(self, request):
-        user = request.user
-        
-        # blacklist all of user's tokens
-        tokens = OutstandingToken.objects.filter(user=user)
-        
-        for token in tokens:
-            try:
-                BlacklistedToken.objects.get_or_create(token=token)
-            except:
-                pass
-            
+        user = request.user            
         user.delete()
         return Response({"detail": "User deleted successfully."},status=status.HTTP_204_NO_CONTENT)
