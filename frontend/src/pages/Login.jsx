@@ -30,11 +30,11 @@ const Login = () => {
             </Box>
 
             <Box className='formField'>
-                <TextField type='password' label="Password" variant="outlined" name='password' onChange={handleFormData} required fullWidth />
+                <TextField type='password' label="Password" variant="outlined" name='password' onChange={handleFormData} required fullWidth autoComplete='off' />
             </Box>
 
             <Button type='submit' className='formButton' sx={{marginBottom:'10px'}}>Login</Button>
-            <Link to='/register'>don't have an account? register!</Link>
+            <Link to='/register' style={{textDecoration:'none'}}>don't have an account? register!</Link>
 
         </Box>
         </form>

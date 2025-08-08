@@ -36,6 +36,7 @@ export const AuthProvider = ({children}) => {
                 )
 
                 alert('Registration successful!')
+                navigate('/login')
 
             } else {
                 alert('Paswords do not match')

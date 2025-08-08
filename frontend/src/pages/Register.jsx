@@ -37,19 +37,19 @@ const Register = () => {
             </Box>
 
             <Box className='formField'>
-                <TextField label="Bio" variant="outlined" name='bio' onChange={handleFormData} fullWidth />
+                <TextField label="Bio" variant="outlined" name='bio' onChange={handleFormData} fullWidth autoComplete='off' />
             </Box>
 
             <Box className='formField'>
-                <TextField type='password' label="Password" variant="outlined" name='password' onChange={handleFormData} required fullWidth />
+                <TextField type='password' label="Password" variant="outlined" name='password' onChange={handleFormData} required fullWidth autoComplete='off' />
             </Box>
 
             <Box className='formField'>
-                <TextField type='password' label="Confirm Password" variant="outlined" name='cpassword' onChange={handleFormData} required fullWidth />
+                <TextField type='password' label="Confirm Password" variant="outlined" name='cpassword' onChange={handleFormData} required fullWidth autoComplete='off' />
             </Box>
 
             <Button type='submit' className='formButton' sx={{marginBottom:'10px'}}>Register</Button>
-            <Link to='/login'>already have an account? login!</Link>
+            <Link to='/login' style={{textDecoration:'none'}}>already have an account? login!</Link>
 
         </Box>
         </form>

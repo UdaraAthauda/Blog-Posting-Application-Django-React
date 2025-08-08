@@ -5,7 +5,7 @@ from django.utils.text import slugify
 User = get_user_model()
 
 class BlogPost(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name="posts")
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True)
     content = models.TextField()
