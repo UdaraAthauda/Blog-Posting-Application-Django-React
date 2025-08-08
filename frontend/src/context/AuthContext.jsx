@@ -1,10 +1,12 @@
 import { Children, createContext, useState } from "react";
 import api from "../api/api";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext()
 
 export const AuthProvider = ({children}) => {
     const [user, setUser] = useState(localStorage.getItem('access') ? true : false)
+    const navigate = useNavigate()
 
     const loginUser = async (email, password) => {
         try{
@@ -14,6 +16,8 @@ export const AuthProvider = ({children}) => {
             localStorage.setItem('refresh', res.data.refresh)
 
             setUser(true)
+            navigate('/')
+
         } catch(error) {
             consol.log('Login error: ',error)
         }
@@ -47,6 +51,7 @@ export const AuthProvider = ({children}) => {
         localStorage.removeItem('refresh')
         setUser(false)
         alert('Loging out....')
+        navigate('/login')
     }
 
     return (

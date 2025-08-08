@@ -2,6 +2,7 @@ import {useContext, useState} from 'react'
 import { AuthContext } from '../context/AuthContext'
 import {Button, Container, Box} from '@mui/material'
 import TextField from '@mui/material/TextField';
+import { Link } from 'react-router-dom';
 
 
 const Register = () => {
@@ -47,7 +48,8 @@ const Register = () => {
                 <TextField type='password' label="Confirm Password" variant="outlined" name='cpassword' onChange={handleFormData} required fullWidth />
             </Box>
 
-            <Button type='submit' className='formButton'>Register</Button>
+            <Button type='submit' className='formButton' sx={{marginBottom:'10px'}}>Register</Button>
+            <Link to='/login'>already have an account? login!</Link>
 
         </Box>
         </form>
