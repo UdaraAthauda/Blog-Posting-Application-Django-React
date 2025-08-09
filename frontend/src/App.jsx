@@ -7,6 +7,8 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import ProtectedRoute from './components/ProtectedRoute'
 import Navbar from './components/Navbar'
+import MyBlogs from './pages/MyBlogs'
+import CreatePost from './pages/CreatePost'
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path='/posts' element={<ProtectedRoute><MyBlogs /></ProtectedRoute>} />
+          <Route path='/create' element={<ProtectedRoute><CreatePost /></ProtectedRoute>} />
         </Routes>
       </AuthProvider>
     </>

@@ -32,12 +32,15 @@ export default function Navbar() {
 
           {/* Right: nav links */}
           <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-            <Button component={RouterLink} to="/posts" color="inherit">
-              My Posts
-            </Button>
-
+            
             {user ? (
               <>
+                <Button component={RouterLink} to="/" color="inherit">
+                    Home
+                </Button>
+                <Button component={RouterLink} to="/posts" color="inherit">
+                  My Blogs
+                </Button>
                 <Button component={RouterLink} to="/create" color="inherit">
                   Create
                 </Button>
@@ -47,6 +50,9 @@ export default function Navbar() {
               </>
             ) : (
               <>
+                <Button component={RouterLink} to="/posts" color="inherit">
+                    All Posts
+                </Button>
                 <Button component={RouterLink} to="/login" color="inherit">
                   Login
                 </Button>

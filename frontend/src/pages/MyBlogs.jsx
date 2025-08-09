@@ -4,17 +4,17 @@ import { Grid, Button, Card, CardContent, Typography } from '@mui/material'
 import api from '../api/api'
 import { Link } from 'react-router-dom'
 
-const Home = () => {
+const MyBlogs = () => {
   const [posts, setposts] = useState([])
  
   useEffect(() => {
-    api.get('read/').then(res => setposts(res.data)).catch(err => console.log(err))
+    api.get('posts/').then(res => setposts(res.data)).catch(err => console.log(err))
   }, [])
 
   return (
     <>
       <Typography variant="h4" gutterBottom>
-        Posts
+        My Blog Posts
       </Typography>
 
       <Grid container spacing={3}>
@@ -34,8 +34,10 @@ const Home = () => {
                   to={`/posts/${post.slug}`}
                   sx={{ marginTop: 2 }}
                 >
-                  Read More
+                  Edit
                 </Button>
+                
+                <Typography><small>status: {post.status}</small></Typography>
               </CardContent>
             </Card>
           </Grid>
@@ -45,4 +47,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default MyBlogs
