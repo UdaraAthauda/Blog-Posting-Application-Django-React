@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
 import ProtectedRoute from './components/ProtectedRoute'
+import Navbar from './components/Navbar'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <>
 
       <AuthProvider>
+        <Navbar />
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />

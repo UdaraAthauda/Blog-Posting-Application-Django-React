@@ -19,7 +19,8 @@ export const AuthProvider = ({children}) => {
             navigate('/')
 
         } catch(error) {
-            consol.log('Login error: ',error)
+            console.log('Login error: ',error)
+            alert('error: wrong credintials? please check!')
         }
     }
 

@@ -6,8 +6,6 @@ import {jwtDecode} from 'jwt-decode'
 function ProtectedRoute({children}) {
     const [isAuthorized, setIsAuthorized] = useState(null)
 
-    console.log('auth', isAuthorized)
-
     useEffect(() => {
         auth().catch(() => setIsAuthorized(false))
     }, [])
