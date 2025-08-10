@@ -48,7 +48,7 @@ const Register = () => {
                 <TextField type='password' label="Confirm Password" variant="outlined" name='cpassword' onChange={handleFormData} required fullWidth autoComplete='off' />
             </Box>
 
-            <Button type='submit' className='formButton' sx={{marginBottom:'10px'}}>Register</Button>
+            <Button type='submit' className='formButton' variant="contained" size='large' fullWidth sx={{marginBottom:'10px'}}>Register</Button>
             <Link to='/login' style={{textDecoration:'none'}}>already have an account? login!</Link>
 
         </Box>

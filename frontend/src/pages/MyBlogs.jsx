@@ -16,7 +16,7 @@ const MyBlogs = () => {
     };
 
     fetchData();
-  }, [posts]);
+  }, []);
 
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm(

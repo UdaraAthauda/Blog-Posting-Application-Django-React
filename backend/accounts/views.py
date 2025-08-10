@@ -19,6 +19,11 @@ class RegisterUserView(APIView):
 class UpdateUserView(APIView):
     permission_classes = [IsAuthenticated]
     
+    def get(self, request):
+        user = request.user
+        serializer = CustomUserSerializer(user, partial=True)
+        return Response(serializer.data)
+    
     def put(self, request):
         user = request.user
         serializer = CustomUserSerializer(user, data=request.data, partial=True)

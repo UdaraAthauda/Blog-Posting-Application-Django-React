@@ -39,7 +39,7 @@ function CreatePost({ onSubmit }) {
   };
 
   return (
-    <Paper sx={{ maxWidth: 600, margin: "auto", mt: 2, p: 3 }}>
+    <Paper elevation={3} sx={{ maxWidth: 600, margin: "auto", mt: 2, p: 3, borderRadius: 2, }}>
 
       <Typography variant="h4" gutterBottom>
         Create a New Blog Post
@@ -83,7 +83,7 @@ function CreatePost({ onSubmit }) {
         </TextField>
 
         {/* Submit */}
-        <Button type="submit" variant="contained" size="large">
+        <Button type="submit" className='formButton' variant="contained" size="large">
           Create Post
         </Button>
       </Box>

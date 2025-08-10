@@ -13,7 +13,7 @@ const Home = () => {
     }
     
     fetchData()
-  }, [posts])
+  }, [])
 
   return (
     <>

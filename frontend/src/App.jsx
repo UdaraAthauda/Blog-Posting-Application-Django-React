@@ -10,6 +10,7 @@ import Navbar from './components/Navbar'
 import MyBlogs from './pages/MyBlogs'
 import CreatePost from './pages/CreatePost'
 import EditPost from './pages/EditPost'
+import UserProfile from './pages/UserProfile'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/posts' element={<ProtectedRoute><MyBlogs /></ProtectedRoute>} />
           <Route path='/posts/:id' element={<ProtectedRoute><EditPost /></ProtectedRoute>} />
           <Route path='/create' element={<ProtectedRoute><CreatePost /></ProtectedRoute>} />
+          <Route path='/user' element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
         </Routes>
       </AuthProvider>
     </>

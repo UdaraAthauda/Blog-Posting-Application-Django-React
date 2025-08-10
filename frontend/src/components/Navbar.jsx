@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 export default function Navbar() {
@@ -42,10 +44,13 @@ export default function Navbar() {
                   My Blogs
                 </Button>
                 <Button component={RouterLink} to="/create" color="inherit">
-                  Create
+                  Write a blog
+                </Button>
+                <Button component={RouterLink} to="/user" color="inherit">
+                  <AccountCircleIcon />
                 </Button>
                 <Button color="inherit" onClick={logoutUser}>
-                  Logout
+                  <LogoutIcon />
                 </Button>
               </>
             ) : (
