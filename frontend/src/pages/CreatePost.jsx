@@ -31,6 +31,7 @@ function CreatePost({ onSubmit }) {
     try{
         api.post('posts/', {title:formData.title, content:formData.content, status:formData.status})
         alert('post successfuly created!')
+        navigate('/posts')
     } catch(error) {
         console.log('post creating error: ', error)
         alert('there is a problem creating post?')

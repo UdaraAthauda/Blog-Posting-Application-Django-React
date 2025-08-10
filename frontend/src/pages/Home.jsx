@@ -8,8 +8,12 @@ const Home = () => {
   const [posts, setposts] = useState([])
  
   useEffect(() => {
-    api.get('read/').then(res => setposts(res.data)).catch(err => console.log(err))
-  }, [])
+    const fetchData = async () => {
+      await api.get('read/').then(res => setposts(res.data)).catch(err => console.log(err))
+    }
+    
+    fetchData()
+  }, [posts])
 
   return (
     <>
@@ -17,9 +21,9 @@ const Home = () => {
         Posts
       </Typography>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {posts.map(post => (
-          <Grid item xs={12} sm={6} md={4} key={post.id}>
+          <Grid key={post.id} size={{ xs: 2, sm: 4, md: 4 }}>
             <Card style={{ height: '100%' }}>
               <CardContent>
                 <Typography variant="h5" gutterBottom>
