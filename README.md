@@ -6,6 +6,8 @@ It enables users to create, read, update, and delete blog posts, manage authenti
 The platform supports both draft and published posts, ensuring flexibility for content creators, and offers a clean, responsive UI for an engaging reading experience.
 
 ✨ Key Features
+
+
 🔐 JWT Authentication – Secure user login and registration.
 
 📝 Post Management – Create, edit, and delete blog posts.
