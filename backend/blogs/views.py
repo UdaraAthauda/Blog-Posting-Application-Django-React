@@ -8,9 +8,13 @@ from .serializers import *
 
 
 class ReadBlogPost(APIView):
-    def get(self, request):
-        posts = BlogPost.objects.filter(status='published')
-        serializer = BlogPostSerializer(posts, many=True)
+    def get(self, request, pk=None):
+        if pk:
+            post = BlogPost.objects.get(id=pk)
+            serializer = BlogPostSerializer(post)
+        else:
+            posts = BlogPost.objects.filter(status='published')
+            serializer = BlogPostSerializer(posts, many=True)
         
         return Response(serializer.data)
 
@@ -24,14 +28,8 @@ class BlogPostViewSet(ModelViewSet):
         serializer.save(author=self.request.user)
     
     def get_queryset(self):
-        if self.request.user.is_authenticated:
-            return BlogPost.objects.filter(author=self.request.user)
-        
-        post_id = self.request.query_params.get("id")
-        
-        if post_id:
-            return BlogPost.objects.filter(id=post_id)
-        
+        return BlogPost.objects.filter(author=self.request.user)
+    
 
 class CommentViewSet(ModelViewSet):
     queryset = Comment.objects.all()

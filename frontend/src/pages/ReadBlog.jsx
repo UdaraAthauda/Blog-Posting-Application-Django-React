@@ -27,7 +27,7 @@ function ReadBlog() {
     useEffect(() => {
         const fetchData = async () => {
             try{
-                const res = await api.get(`posts/?id=${post_id}`)
+                const res = await api.get(`read/${post_id}`)
                 setPost(res.data)
                 setComments(res.data.comments)
                 

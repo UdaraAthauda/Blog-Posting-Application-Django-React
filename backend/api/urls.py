@@ -19,5 +19,6 @@ urlpatterns = [
     
     #### blog post urls ####
     path('read/', ReadBlogPost.as_view()),
+    path('read/<int:pk>/', ReadBlogPost.as_view()),
     path('', include(router.urls)),
 ]
