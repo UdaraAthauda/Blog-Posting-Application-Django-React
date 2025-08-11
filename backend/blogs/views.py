@@ -24,18 +24,27 @@ class BlogPostViewSet(ModelViewSet):
         serializer.save(author=self.request.user)
     
     def get_queryset(self):
-        return BlogPost.objects.filter(author=self.request.user)
-    
+        if self.request.user.is_authenticated:
+            return BlogPost.objects.filter(author=self.request.user)
+        
+        post_id = self.request.query_params.get("id")
+        
+        if post_id:
+            return BlogPost.objects.filter(id=post_id)
         
 
 class CommentViewSet(ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticatedOrReadOnly]
     
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        serializer.save(author=self.request.user)
         
-
+    def get_queryset(self):
+        post_id = self.request.query_params.get('post_id')
+        
+        if post_id:
+            return Comment.objects.filter(post=post_id).order_by('-created_at')
 
 

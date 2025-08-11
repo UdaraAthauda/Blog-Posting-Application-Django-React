@@ -4,7 +4,7 @@ from .models import BlogPost, Comment, Tag
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = '__all__'
+        fields = ['id', 'post', 'content', 'created_at']
         
 class TagSerializer(serializers.ModelSerializer):
     class Meta:

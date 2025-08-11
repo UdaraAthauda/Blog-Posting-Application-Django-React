@@ -11,6 +11,8 @@ import MyBlogs from './pages/MyBlogs'
 import CreatePost from './pages/CreatePost'
 import EditPost from './pages/EditPost'
 import UserProfile from './pages/UserProfile'
+import Footer from './components/Footer'
+import ReadBlog from './pages/ReadBlog'
 
 function App() {
 
@@ -27,7 +29,9 @@ function App() {
           <Route path='/posts/:id' element={<ProtectedRoute><EditPost /></ProtectedRoute>} />
           <Route path='/create' element={<ProtectedRoute><CreatePost /></ProtectedRoute>} />
           <Route path='/user' element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
+          <Route path='/read/:post_id' element={<ProtectedRoute><ReadBlog /></ProtectedRoute>} />
         </Routes>
+        <Footer />
       </AuthProvider>
     </>
   )

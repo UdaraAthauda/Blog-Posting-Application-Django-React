@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import CreateIcon from '@mui/icons-material/Create';
 
 export default function Navbar() {
   
@@ -26,6 +26,7 @@ export default function Navbar() {
               mr: 2,
             }}
           >
+            <CreateIcon />
             Blogger
           </Typography>
 

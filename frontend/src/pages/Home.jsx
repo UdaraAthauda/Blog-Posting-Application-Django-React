@@ -35,7 +35,7 @@ const Home = () => {
                 <Button
                   variant="outlined"
                   component={Link}
-                  to={`/posts/${post.slug}`}
+                  to={`/read/${post.id}`}
                   sx={{ marginTop: 2 }}
                 >
                   Read More
