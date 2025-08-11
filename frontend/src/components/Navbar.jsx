@@ -56,7 +56,7 @@ export default function Navbar() {
               </>
             ) : (
               <>
-                <Button component={RouterLink} to="/posts" color="inherit">
+                <Button component={RouterLink} to="/blogs" color="inherit">
                     All Posts
                 </Button>
                 <Button component={RouterLink} to="/login" color="inherit">

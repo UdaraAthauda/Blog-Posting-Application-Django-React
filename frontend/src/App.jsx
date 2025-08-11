@@ -13,6 +13,7 @@ import EditPost from './pages/EditPost'
 import UserProfile from './pages/UserProfile'
 import Footer from './components/Footer'
 import ReadBlog from './pages/ReadBlog'
+import AllBlogs from './pages/AllBlogs'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/blogs' element={<AllBlogs />} />
           <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path='/posts' element={<ProtectedRoute><MyBlogs /></ProtectedRoute>} />
           <Route path='/posts/:id' element={<ProtectedRoute><EditPost /></ProtectedRoute>} />
